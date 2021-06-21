@@ -24,11 +24,11 @@ class Environment:
     STARTFINISH = None
 
     @classmethod
-    def initialize(self, info:list):
+    def initialize(cls, info:list):
         """Initializes the graph environment into verticies and edges with city and milage data text files."""
-        Environment.CITIES = initVerticies(info[0])
-        Environment.MILAGE = initEdges(info[1])
-        Environment.STARTFINISH = Environment.CITIES.pop(0) # Take the first city off as it is starting point and end point
+        cls.CITIES = initVerticies(info[0])
+        cls.MILAGE = initEdges(info[1])
+        cls.STARTFINISH = cls.CITIES.pop(0) # Take the first city off as it is starting point and end point
 
 def initVerticies(filename):
     """Converts cities from given text file into verticies stored in an array."""
